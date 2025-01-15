@@ -28,4 +28,9 @@ class AppConstants {
   static const String contactSupport = '$baseUrl/contact/submit';
   static const String deleteAccount = '$baseUrl/profile/delete';
   static const String master = '$baseUrl/master';
+
+
+  // validation
+  static const kTextValidatorEmailRegex =
+      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../config/api_contsant.dart';
+
 class CustomFormWidget extends StatelessWidget {
   const CustomFormWidget(
       {super.key,
@@ -81,14 +83,14 @@ class CustomFormWidget extends StatelessWidget {
   }
 }
 
-// validatorWithMessage(
-//     {required String message, String? value, bool isEmail = false}) {
-//   if (value == null || value.isEmpty) {
-//     return message;
-//   }
-//   if (isEmail &&
-//       !RegExp(AppConstants.kTextValidatorEmailRegex).hasMatch(value)) {
-//     return 'Has to be a valid email address.';
-//   }
-//   return null;
-// }
+validatorWithMessage(
+    {required String message, String? value, bool isEmail = false}) {
+  if (value == null || value.isEmpty) {
+    return message;
+  }
+  if (isEmail &&
+      !RegExp(AppConstants.kTextValidatorEmailRegex).hasMatch(value)) {
+    return 'Has to be a valid email address.';
+  }
+  return null;
+}

@@ -1,6 +1,8 @@
 import 'package:apilearning/views/auth/login.dart';
 import 'package:flutter/material.dart';
 
+import '../auth/signup.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -26,6 +28,19 @@ class HomePage extends StatelessWidget {
                             MaterialPageRoute(builder: (_) => LoginScreen()));
                       },
                       child: Text('Login')),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => SignUpScreen()));
+                      },
+                      child: Text('SignUp')),
                 ),
               ],
             ),

@@ -3,5 +3,5 @@ class CommonResponse<T> {
   final String message;
   final T? response;
   CommonResponse(
-      {required this.isSuccess, required this.message, required this.response});
+      {required this.isSuccess, required this.message, this.response});
 }
