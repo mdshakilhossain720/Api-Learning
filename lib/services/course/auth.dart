@@ -4,11 +4,12 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../config/api_contsant.dart';
+import '../../model/signupcreadential.dart';
 
 class AuthService extends Auth {
   final Ref ref;
   AuthService(this.ref);
-@override
+  @override
   Future<Response> login(
       {required String contact, required String password}) async {
     final response =
@@ -16,6 +17,16 @@ class AuthService extends Auth {
       contact.contains('@') ? 'email' : 'phone': contact,
       'password': password,
     });
+    return response;
+  }
+
+  @override
+  Future<Response> registration(
+      {required SignUpCredential signUpCredential}) async {
+    final response = await ref.read(apiClinetProvider).post(
+          AppConstants.register,
+          data: signUpCredential.toMap(),
+        );
     return response;
   }
 }

@@ -1,7 +1,13 @@
 import 'package:dio/dio.dart';
 
+import '../../model/signupcreadential.dart';
+
 abstract class Auth {
   Future<Response> login({required String contact, required String password});
+  Future<Response> registration({
+    required SignUpCredential signUpCredential,
+  });
+
   // Future<Response> getGuestId();
   // Future<Response> activeAccountRequest();
   // // Future<Response> registration({
